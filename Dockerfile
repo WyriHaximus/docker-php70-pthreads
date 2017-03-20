@@ -14,9 +14,9 @@ RUN apt-get update \
 		libxml2-dev \
 		wget \
 
-	&& wget -qO php-7.0.2.tar.bz2 http://us1.php.net/get/php-7.0.2.tar.bz2/from/this/mirror \
-	&& tar xjf php-7.0.2.tar.bz2 \
-	&& cd php-7.0.2 \
+	&& wget -qO php-7.0.17.tar.bz2 http://us1.php.net/get/php-7.0.17.tar.bz2/from/this/mirror \
+	&& tar xjf php-7.0.17.tar.bz2 \
+	&& cd php-7.0.17 \
 	&& ./configure \
 		--disable-cgi \
 		--enable-mbstring \
@@ -33,8 +33,8 @@ RUN apt-get update \
 	&& pear config-set php_ini /usr/local/lib/php.ini \
 	&& pecl install pthreads \
 
-	&& rm php-7.0.2.tar.bz2 \
-	&& rm -rf php-7.0.2 \
+	&& rm php-7.0.17.tar.bz2 \
+	&& rm -rf php-7.0.17 \
 	&& apt-get purge -y autoconf build-essential wget .+-dev \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
